@@ -1,0 +1,14 @@
+---
+- name: Add Erlang/OTP repository file [RHEL/CentOS]
+  template:
+    src: "{{ erlang_rpm_repo_tpl }}"
+    dest: "/etc/yum.repos.d/{{ erlang_rpm_repo_tpl | basename | regex_replace('\\.j2$', '') }}"
+    force: true
+    backup: true
+
+- name: Install Erlang [RHEL/CentOS]
+  yum:
+    name: "erlang{{ erlang_series_rpm_version | ternary ('-' + (erlang_series_rpm_version | string),'') }}"
+    state: present
+    disablerepo: "*"
+    enablerepo: "rabbitmq_erlang"

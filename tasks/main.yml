@@ -1,0 +1,5 @@
+---
+
+- include_tasks: "{{ item }}"
+  with_first_found:
+    - "install_{{ ansible_os_family }}.yml"
