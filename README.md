@@ -22,8 +22,8 @@ Defaults variables are inside `defaults/main.yml`
 ---
 erlang_series: 20
 
-erlang_rmp_repo_url: https://dl.bintray.com/rabbitmq-erlang/rpm/erlang
-erlang_rmp_gpg_url: https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc
+erlang_rpm_repo_url: https://dl.bintray.com/rabbitmq-erlang/rpm/erlang
+erlang_rpm_gpg_url: https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc
 erlang_rpm_repo_tpl: etc/yum.repos.d/rabbitmq_erlang.repo.j2
 erlang_series_rpm_version:
 
@@ -40,11 +40,11 @@ erlang_series_deb_version:
 
   - should be an integer (16,19,20,21 available at 01.16.2019)
 
-- `erlang_rmp_repo_url`
+- `erlang_rpm_repo_url`
 
   - repository base url used for the yum template
 
-- `erlang_rmp_gpg_url`
+- `erlang_rpm_gpg_url`
 
   - gpg key to used for the yum template
 
