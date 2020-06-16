@@ -1,5 +1,5 @@
 ---
-erlang_series: 20
+erlang_series: 22
 
 erlang_rpm_repo_url: https://dl.bintray.com/rabbitmq-erlang/rpm/erlang
 erlang_rpm_gpg_url: https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc

@@ -1,11 +1,10 @@
 ---
-sudo: required
 language: python
+python:
+  - "2.7"
 cache: pip
 services:
   - docker
-matrix:
-  fast_finish: true
 
 stages:
   - name: tests
@@ -24,15 +23,18 @@ jobs:
       script: tox
       env:
         - ANSIBLE=2.5
-
     - <<: *test-tox
       env:
         - ANSIBLE=2.6
-
     - <<: *test-tox
       env:
         - ANSIBLE=2.7
-
+    - <<: *test-tox
+      env:
+        - ANSIBLE=2.8
+    - <<: *test-tox
+      env:
+        - ANSIBLE=2.9
     - stage: mkrelease
       install:
         - pip install git-semver ansible

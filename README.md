@@ -3,6 +3,8 @@ ansible-role-erlang
 
 Ansible role to install Erlang/OTP versions provided by RabbitMQ.
 
+**/!\ Not compatible with ansible > 2.8.7 < 2.8.13 due to a [bug](https://github.com/ansible/ansible/issues/70081)**
+
 Requirements
 ------------
 
@@ -20,7 +22,7 @@ Role Variables
 Defaults variables are inside `defaults/main.yml`
 ```yaml
 ---
-erlang_series: 20
+erlang_series: 22
 
 erlang_rpm_repo_url: https://dl.bintray.com/rabbitmq-erlang/rpm/erlang
 erlang_rpm_gpg_url: https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc
@@ -38,7 +40,8 @@ erlang_series_deb_version:
 
 - `erlang_series`
 
-  - should be an integer (16,19,20,21 available at 01.16.2019)
+  - should be an integer (19,20,21,22,23 available at 06.14.2020)
+  - don't forget to choose a serie compatible with the rabbitmq version that will be installed (see [rabbitmq documentation](https://www.rabbitmq.com/which-erlang.html))
 
 - `erlang_rpm_repo_url`
 
@@ -102,7 +105,7 @@ Example Playbook
 ```yaml
 - hosts: rabbitmq
   roles:
-     - { role: rockandska.erlang, erlang_series: 19 }
+     - { role: rockandska.erlang, erlang_series: 20 }
 ```
 
 Local Testing
