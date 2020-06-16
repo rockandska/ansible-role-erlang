@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.1.0](https://github.com/rockandska/ansible-role-erlang/tree/0.1.0) (2020-06-16)
+**Closed issues:**
+
+- No package matching 'erlang' found available, installed or updated [\#2](https://github.com/rockandska/ansible-role-erlang/issues/2)
+
+**Merged pull requests:**
+
+- update default erlang series version [\#3](https://github.com/rockandska/ansible-role-erlang/pull/3) ([rockandska](https://github.com/rockandska))
+
 ## [0.0.2](https://github.com/rockandska/ansible-role-erlang/tree/0.0.2) (2019-03-15)
 **Merged pull requests:**
 
