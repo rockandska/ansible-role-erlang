@@ -1,1 +1,1 @@
-deb {{ erlang_deb_repo_url }} {{ ansible_distribution_release | lower }} erlang-{{ erlang_series }}.x
+deb {{ erlang_deb_repo_url }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release | lower }} main
