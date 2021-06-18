@@ -8,8 +8,8 @@
   register: yum_erlang_repository_file
 
 - name: Clean yum if template changed [RHEL/CentOS]
-  command: yum clean all
-  when: yum_erlang_repository_file.changed
+  command: yum clean all  # noqa 303
+  when: yum_erlang_repository_file.changed  # noqa 503
 
 - name: Install Erlang [RHEL/CentOS]
   yum:
