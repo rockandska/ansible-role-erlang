@@ -13,7 +13,7 @@
 
 - name: Install Erlang [RHEL/CentOS]
   yum:
-    name: "erlang{{ erlang_series_rpm_version | ternary ('-' + (erlang_series_rpm_version | string),'') }}"
+    name: "erlang{{ erlang_series_rpm_version | ternary ('-' + (erlang_series_rpm_version | string),'-' + (erlang_series | string) + '*') }}"
     state: present
     disablerepo: "*"
     enablerepo: "rabbitmq_erlang"
