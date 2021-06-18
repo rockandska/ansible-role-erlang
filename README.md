@@ -25,6 +25,11 @@ Defaults variables are inside `defaults/main.yml`
 ---
 erlang_series: 22
 
+erlang_rpm_repo_url: https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/rpm/el
+erlang_rpm_gpg_url: https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/gpg.E495BB49CC4BBE5B.key
+erlang_rpm_repo_tpl: etc/yum.repos.d/rabbitmq_erlang.repo.j2
+erlang_series_rpm_version:
+
 erlang_deb_repo_url: https://dl.bintray.com/rabbitmq-erlang/debian
 erlang_deb_gpg_url: https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc
 erlang_deb_repo_tpl: etc/apt/sources.list.d/rabbitmq_erlang.list.j2
