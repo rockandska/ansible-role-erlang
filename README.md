@@ -20,17 +20,18 @@ Role Variables
 --------------
 
 Defaults variables are inside `defaults/main.yml`
+
 ```yaml
 ---
 erlang_series: 22
 
-erlang_rpm_repo_url: https://dl.bintray.com/rabbitmq-erlang/rpm/erlang
-erlang_rpm_gpg_url: https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc
+erlang_rpm_repo_url: https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/rpm/el
+erlang_rpm_gpg_url: https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/gpg.E495BB49CC4BBE5B.key
 erlang_rpm_repo_tpl: etc/yum.repos.d/rabbitmq_erlang.repo.j2
 erlang_series_rpm_version:
 
-erlang_deb_repo_url: https://dl.bintray.com/rabbitmq-erlang/debian
-erlang_deb_gpg_url: https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc
+erlang_deb_repo_url: https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/deb
+erlang_deb_gpg_url: https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/gpg.E495BB49CC4BBE5B.key
 erlang_deb_repo_tpl: etc/apt/sources.list.d/rabbitmq_erlang.list.j2
 erlang_deb_pinning_tpl: etc/apt/preferences.d/erlang.j2
 erlang_series_deb_version:
@@ -40,7 +41,7 @@ erlang_series_deb_version:
 
 - `erlang_series`
 
-  - should be an integer (19,20,21,22,23 available at 06.14.2020)
+  - should be an integer (21,22,23 available at 06.19.2021)
   - don't forget to choose a serie compatible with the rabbitmq version that will be installed (see [rabbitmq documentation](https://www.rabbitmq.com/which-erlang.html))
 
 - `erlang_rpm_repo_url`
@@ -63,8 +64,8 @@ erlang_series_deb_version:
   - install a specific version of the `erlang_series` for the Centos / Redhat systems
   - examples:
     ```
-    20.3.8.15-1.el7.centos
-    20.3.8.17-1.el7.centos
+    20.3.8.15-1.el7
+    20.3.8.17-1.el7
     ```
 
 - `erlang_deb_repo_url`

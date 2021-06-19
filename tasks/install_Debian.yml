@@ -31,5 +31,5 @@
 - name: "Install Erlang [Debian/Ubuntu]"
   apt:
     package:
-      - "erlang{{ erlang_series_deb_version | ternary ('=' + (erlang_series_deb_version | string),'') }}"
+      - erlang
     state: present
