@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.1.1](https://github.com/rockandska/ansible-role-erlang/tree/0.1.0) (2021-06-27)
+**Merged pull requests:**
+
+- use cloudsmith repositories [\#5](https://github.com/rockandska/ansible-role-erlang/pull/5) ([pietaj](https://github.com/pietaj))
+
 ## [0.1.0](https://github.com/rockandska/ansible-role-erlang/tree/0.1.0) (2020-06-16)
 **Closed issues:**
 
