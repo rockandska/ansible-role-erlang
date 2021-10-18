@@ -94,8 +94,8 @@ erlang_series_deb_version:
 
   - install a specific version of the `erlang_series` for Debian systems
   - examples:
-  	```
-  	1:20.3.8.17-1
+    ```
+    1:20.3.8.17-1
     1:20.3.8.16-1
     1:20.3.8.15-1
     ```
@@ -112,21 +112,24 @@ Example Playbook
 Local Testing
 -------------
 
-The preferred way of locally testing the role is to use Docker and [molecule](https://github.com/metacloud/molecule) (v2.x). You will have to install Docker on your system. See "Get started" for a Docker package suitable to for your system.
-We are using tox to simplify process of testing on multiple ansible versions. To install tox execute:
+#### Requirements
+
+python3 <3.8
+docker
+
+#### Run tests
+
 ```sh
-$ sudo pip install tox
-# or
-$ pip install --user tox
+$ make test
 ```
 
-To run tests on all ansible versions (WARNING: this can take some time)
+After a first run, additional targets for each tox env / molecule scenario should be available
+through auto-completion.
+
+To debug and run a custom molecule command on custom environment with only default test scenario:
 ```sh
-$ tox
-```
-To run a custom molecule command on custom environment with only default test scenario:
-```sh
-$ tox -e py27-ansible25 -- molecule test -s default
+$ source tmp/bin/activate
+$ tox -e py3-ansible27 -- molecule test -s default
 ```
 For more information about molecule go to their [docs](http://molecule.readthedocs.io/en/latest/).
 
