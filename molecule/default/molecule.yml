@@ -3,12 +3,14 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint:
-  name: yamllint
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
 platforms:
   - name: ansible-role-erlang-ubuntu-bionic
     image: ubuntu:bionic
-    docker_host: "${docker_host:-unix://var/run/docker.sock}"
+    docker_host: "${DOCKER_HOST:-unix://var/run/docker.sock}"
     privileged: true
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
@@ -19,7 +21,7 @@ platforms:
       - sys_admin
   - name: ansible-role-erlang-debian-stretch
     image: debian:stretch
-    docker_host: "${docker_host:-unix://var/run/docker.sock}"
+    docker_host: "${DOCKER_HOST:-unix://var/run/docker.sock}"
     privileged: true
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
@@ -41,8 +43,6 @@ platforms:
       - SYS_ADMIN
 provisioner:
   name: ansible
-  lint:
-    name: ansible-lint
   playbooks:
     create: create.yml
     converge: playbook.yml
