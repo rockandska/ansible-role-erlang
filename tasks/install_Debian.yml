@@ -31,5 +31,6 @@
 - name: "Install Erlang [Debian/Ubuntu]"
   apt:
     package:
-      - erlang
+      - erlang-nox
     state: present
+    install_recommends: false
