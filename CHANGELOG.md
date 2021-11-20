@@ -1,4 +1,4 @@
-# Change Log
+# CHANGELOG
 
 ## [0.1.1](https://github.com/rockandska/ansible-role-erlang/tree/0.1.0) (2021-06-27)
 **Merged pull requests:**
