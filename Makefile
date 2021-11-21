@@ -136,6 +136,10 @@ publish:
 	$(info ### Updating GHA pull_request workflow ###)
 	docker run --rm -v "${PWD}":/workdir mikefarah/yq:4.9.6 -i eval '.jobs.Tests.strategy.matrix.target = [ "$(subst $(_SPACE),"$(_SPACE)$(_COMMA)$(_SPACE)",$(strip $(TESTS_TARGETS)))" ]' $@
 
+.github/workflows/push_master.yml: tox.ini .FORCE
+	$(info ### Updating GHA push_master workflow ###)
+	docker run --rm -v "${PWD}":/workdir mikefarah/yq:4.9.6 -i eval '.jobs.Tests.strategy.matrix.target = [ "$(subst $(_SPACE),"$(_SPACE)$(_COMMA)$(_SPACE)",$(strip $(TESTS_TARGETS)))" ]' $@
+
 ##############
 # Python env #
 ##############
