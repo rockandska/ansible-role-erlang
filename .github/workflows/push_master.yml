@@ -34,8 +34,8 @@ jobs:
           echo "token: ${ANSIBLE_GALAXY_TOKEN}" > ~/.ansible/galaxy_token
         env:
           ANSIBLE_GALAXY_TOKEN: "${{ secrets.ANSIBLE_GALAXY_TOKEN }}"
+      - name: Push back CHANGELOG and tag
+        run: git push --follow-tags
       - name: Publish release
         run: |
           make publish
-      - name: Push back CHANGELOG and tag
-        run: git push --follow-tags
