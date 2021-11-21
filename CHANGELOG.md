@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [0.1.2](https://github.com/rockandska/ansible-role-erlang/tree/0.1.2) (2021-11-21)
+
+### fix
+
+- use erlang-nox and dont install debian recommended packages (#7) ([42100e8](https://github.com/rockandska/ansible-role-erlang/commit/42100e878c72dead3f7e5afe688fd85614b35046))
+
 ## [0.1.1](https://github.com/rockandska/ansible-role-erlang/tree/0.1.0) (2021-06-27)
 **Merged pull requests:**
 
